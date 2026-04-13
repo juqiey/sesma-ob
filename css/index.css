@@ -1,0 +1,133 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Colors */
+    --primary-black: #0a0a0a;
+    --secondary-turquoise: #00ced1;
+    --accent-gold: #ffcc00;
+    --pure-white: #ffffff;
+
+    /* Fonts */
+    --font-header: 'League Spartan', sans-serif;
+    --font-subheader: 'Libre Baskerville', serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    background-color: var(--primary-black);
+    font-family: var(--font-body);
+    overflow: hidden; /* Keeps the welcome page contained */
+    color: var(--pure-white);
+}
+
+.welcome-hero {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    /* Using a high-contrast rugby background */
+    background: url('/img/TRL.jpeg') no-repeat center center/cover;
+}
+
+/* Dark overlay for text readability */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(10, 10, 10, 0.95), rgba(10, 10, 10, 0.5));
+    z-index: 1;
+}
+
+.content-wrapper {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.club-logo {
+    width: 200px;
+    height: auto;
+    filter: drop-shadow(0 0 20px rgba(0, 206, 209, 0.3));
+    margin-bottom: 25px;
+}
+
+.club-name {
+    font-family: var(--font-header);
+    font-size: 5.5rem;
+    font-weight: 900;
+    line-height: 0.85;
+    letter-spacing: -2px; /* Tight tracking for a powerful, aggressive look */
+    text-transform: uppercase;
+    color: var(--pure-white);
+    margin-bottom: 15px;
+}
+
+.club-est {
+    font-family: var(--font-subheader);
+    font-style: italic;
+    font-size: 1.5rem;
+    color: var(--accent-gold);
+    letter-spacing: 1px;
+    margin-bottom: 50px;
+    display: block;
+}
+
+/* Interactive Hover Fill Button */
+.enter-btn {
+    font-family: var(--font-header);
+    display: inline-block;
+    padding: 20px 55px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--secondary-turquoise);
+    text-decoration: none;
+    text-transform: uppercase;
+    border: 2px solid var(--secondary-turquoise);
+    background: transparent;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    overflow: hidden;
+    letter-spacing: 4px;
+}
+
+.enter-btn:hover {
+    color: var(--pure-white);
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 30px rgba(0, 206, 209, 0.3);
+}
+
+/* The Fill Effect */
+.enter-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: var(--secondary-turquoise);
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
+.enter-btn:hover::after {
+    height: 100%;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .club-name {
+        font-size: 3.5rem;
+    }
+    .club-logo {
+        width: 150px;
+    }
+}

@@ -1,0 +1,321 @@
+/* --- GLOBAL NAVIGATION & FOOTER STYLES --- */
+
+:root {
+    --primary-black: #0a0a0a;
+    --secondary-turquoise: #00ced1;
+    --accent-gold: #ffcc00;
+    --pure-white: #ffffff;
+    
+    --font-header: 'League Spartan', sans-serif;
+    --font-subheader: 'Libre Baskerville', serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+/* --- HEADER STYLING --- */
+.main-header {
+    background: var(--primary-black);
+    padding: 15px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid rgba(0, 206, 209, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.nav-logo img {
+    height: 60px; /* Adjusted based on your logo path */
+    width: auto;
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--pure-white);
+    font-family: var(--font-header);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 1.5px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover, 
+.nav-links a.active {
+    color: var(--secondary-turquoise);
+}
+
+/* Sporty Slanted "Join Us" Button */
+.nav-cta .join-btn {
+    background: var(--accent-gold);
+    color: var(--primary-black);
+    padding: 12px 28px;
+    font-family: var(--font-header);
+    font-weight: 900;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+    clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);
+    transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.nav-cta .join-btn:hover {
+    background: var(--secondary-turquoise);
+    transform: scale(1.05);
+}
+
+/* --- FOOTER STYLING --- */
+.main-footer {
+    background: #050505;
+    padding: 80px 5% 30px;
+    border-top: 6px solid var(--accent-gold);
+    margin-top: 100px;
+    color: var(--pure-white);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Container to align image and text side-by-side */
+.footer-logo-container {
+    display: flex;
+    align-items: center; /* Vertically centers logo with text */
+    gap: 15px;           /* Space between image and text */
+    margin-bottom: 15px;
+}
+
+/* Styling for the logo image */
+.footer-img {
+    height: 50px;        /* Adjust height to match your logo's aspect ratio */
+    width: auto;
+    display: block;
+    filter: drop-shadow(0 0 5px rgba(0, 206, 209, 0.3)); /* Optional turquoise glow */
+}
+
+.footer-logo {
+    font-family: var(--font-header);
+    color: var(--secondary-turquoise);
+    font-size: 2.2rem;
+    letter-spacing: -1px;
+    margin-bottom: 0;    /* Removed margin-bottom since it's on the container now */
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.footer-brand p {
+    font-family: var(--font-body);
+    color: #aaa;
+    max-width: 300px;
+    line-height: 1.6;
+}
+
+.footer-links h3, 
+.footer-social h3 {
+    font-family: var(--font-header);
+    color: var(--pure-white);
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #888;
+    font-family: var(--font-body);
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--accent-gold);
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: #111; /* Dark base */
+    border: 1px solid #333;
+    color: var(--secondary-turquoise);
+    font-size: 1.2rem; /* Size of the icon */
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Sporty Slant for the icon boxes */
+    clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+}
+
+.social-icons a:hover {
+    background: var(--secondary-turquoise);
+    color: var(--primary-black);
+    border-color: var(--secondary-turquoise);
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 206, 209, 0.4);
+}
+
+/* Specific color for gold accent if you prefer one icon to stand out */
+.social-icons a:hover .fa-x-twitter {
+    /* Optional: you can target specific icons on hover */
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 60px;
+    padding: 40px 0;
+    border-top: 1px solid #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Space between copyright and badge */
+}
+
+.footer-bottom p {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: #555;
+    letter-spacing: 0.5px;
+}
+
+/* The Signature Badge */
+.dev-badge {
+    display: flex;
+    align-items: center;
+    font-family: var(--font-header);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    /* The slanted sporty frame */
+    clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
+    background: #111;
+    border: 1px solid #222;
+}
+
+.dev-label {
+    color: #777;
+    padding: 6px 12px 6px 15px;
+}
+
+.dev-name {
+    background: var(--primary-black);
+    color: var(--secondary-turquoise);
+    padding: 6px 15px 6px 12px;
+    font-weight: 900;
+    transition: background 0.3s ease;
+    cursor: default;
+}
+
+/* Hover effect to switch to your accent gold */
+.dev-badge:hover .dev-name {
+    background: var(--accent-gold);
+    color: var(--primary-black);
+}
+
+/* Mobile Menu Toggle Styling */
+.menu-toggle {
+    display: none; /* Hidden by default on desktop */
+    flex-direction: column;
+    cursor: pointer;
+    gap: 6px;
+}
+
+.menu-toggle .bar {
+    width: 30px;
+    height: 3px;
+    background-color: var(--secondary-turquoise);
+    transition: all 0.3s ease;
+}
+
+/* Responsive Breakpoint (Tablet/Mobile) */
+@media (max-width: 992px) {
+    .menu-toggle {
+        display: flex;
+        z-index: 1001;
+    }
+
+    .nav-links {
+        position: fixed;
+        left: -100%; /* Hide off-screen */
+        top: 0;
+        flex-direction: column;
+        background-color: rgba(10, 10, 10, 0.95);
+        width: 100%;
+        height: 100vh;
+        text-align: center;
+        transition: 0.4s;
+        justify-content: center;
+        padding-top: 80px;
+    }
+
+    .nav-links.active {
+        left: 0; /* Slide in */
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+    }
+
+    .nav-cta {
+        display: none; /* Hide CTA on mobile to save space, or move inside nav-links */
+    }
+
+    /* Hamburger to 'X' Animation */
+    .menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
+    .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+    .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 992px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .footer-brand {
+        grid-column: span 2;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Consider adding a hamburger menu for mobile later */
+    }
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+    .footer-brand {
+        grid-column: span 1;
+    }
+}
