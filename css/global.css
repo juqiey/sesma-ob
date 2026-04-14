@@ -309,9 +309,6 @@
 }
 
 @media (max-width: 768px) {
-    .nav-links {
-        display: none; /* Consider adding a hamburger menu for mobile later */
-    }
     .footer-grid {
         grid-template-columns: 1fr;
     }
@@ -319,3 +316,4 @@
         grid-column: span 1;
     }
 }
+

@@ -192,12 +192,48 @@ h3{
     font-size: 0.9rem;
 }
 
-/* Responsive Handling */
+/* --- UPDATED RESPONSIVE HANDLING --- */
+
 @media (max-width: 1100px) {
-    .player-grid-10 { grid-template-columns: repeat(2, 1fr); }
+    /* Handle both the players and the founders */
+    .player-grid-10, 
+    .founders-grid { 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 25px;
+    }
 }
 
-@media (max-width: 700px) {
-    .player-grid-10 { grid-template-columns: 1fr; }
-    .player-portrait { height: 350px; }
+@media (max-width: 768px) {
+    /* Stack everything to 1 column for mobile */
+    .player-grid-10, 
+    .founders-grid { 
+        grid-template-columns: 1fr; 
+        padding: 0 10px; /* Give some breathing room on edges */
+    }
+
+    .player-portrait { 
+        height: 350px; 
+    }
+
+    /* Adjusting Founder specific elements for mobile */
+    .founder-box {
+        padding: 15px;
+    }
+
+    .founder-img-wrapper {
+        max-width: 300px; /* Prevents the photo from getting too huge on a tall phone */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .founder-info h3 {
+        font-size: 1.5rem; /* Slightly smaller text for better fit */
+    }
+}
+
+@media (max-width: 480px) {
+    /* For very small devices */
+    .founder-img-wrapper {
+        max-width: 100%; /* Go back to full width on tiny screens */
+    }
 }

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News & Events | SESMA Rugby</title>
+    <link rel="icon" type="image/png" href="../img/sesma ob.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700;900&family=Libre+Baskerville:ital@1&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/news.css">
+    <script src="../js/main.js"></script>
+</head>
+<body>
+
+    <header class="main-header">
+        <nav class="nav-container">
+            <div class="nav-logo">
+                <img src="../img/sesma ob.png" alt="Logo">
+            </div>
+            
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../view/home.html" >About</a></li>
+                <li><a href="../view/achievements.html">Achievements</a></li>
+                <li><a href="../view/hall-of-fame.html">Hall of Fame</a></li>
+                <li><a href="../view/news.html" class="active">News</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="#" class="join-btn">Join Us</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="news-container">
+        <header class="page-intro">
+            <h2 class="section-label">Field Reports</h2>
+            <p class="section-intro">The latest updates, match results, and community events from the heart of SESMA Rugby.</p>
+            
+            <div class="filter-bar">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="news">News</button>
+                <button class="filter-btn" data-filter="event">Events</button>
+            </div>
+        </header>
+
+        <section class="news-grid">
+            <article class="news-item news" data-category="news" 
+                     data-fulltext="The State Finals were nothing short of legendary. Facing our rivals under the floodlights, the SESMA pack showed incredible grit. The winning try came in the 78th minute following a dominant 5-meter scrum. This victory cements our position at the top of the table.">
+                <div class="news-img-wrapper">
+                    <img src="../img/TRL.jpeg" alt="Match Win">
+                    <span class="category-tag">Match Report</span>
+                </div>
+                <div class="news-meta">
+                    <span><i class="fa-solid fa-calendar-days"></i> April 12, 2026</span>
+                    <span><i class="fa-solid fa-location-dot"></i> Stadium Utama</span>
+                </div>
+                <div class="news-body">
+                    <h3>Victory at the State Finals</h3>
+                    <p>In a grueling display of defensive discipline, SESMA secured a 15-10 victory against our rivals last Saturday...</p>
+                    <button class="read-more">Full Report <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </article>
+
+            <article class="news-item event" data-category="event"
+                     data-fulltext="Our latest Junior Clinic saw record-breaking attendance. Coaches from the senior squad led sessions on handling, tactical positioning, and the importance of teamwork. It was an inspiring day for the future of SESMA Rugby.">
+                <div class="news-img-wrapper">
+                    <img src="../img/interbatch_futsal.jpeg" alt="Rugby Clinic">
+                    <span class="category-tag">Community</span>
+                </div>
+                <div class="news-meta">
+                    <span><i class="fa-solid fa-calendar-days"></i> March 28, 2026</span>
+                    <span><i class="fa-solid fa-location-dot"></i> Training Pitch A</span>
+                </div>
+                <div class="news-body">
+                    <h3>Junior Development Clinic</h3>
+                    <p>Over 50 young athletes joined our founding members for a day of technical skill-building and workshops.</p>
+                    <button class="read-more">View Details <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <div id="news-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <span class="modal-category" id="modal-category">Category</span>
+                <h2 id="modal-title">Article Title</h2>
+                <div class="modal-meta">
+                    <span id="modal-date">Date</span>
+                    <span id="modal-location">Location</span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <img src="" id="modal-img" alt="Report Image">
+                <div id="modal-full-text"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo-container">
+                    <img src="../img/sesma ob.png" alt="SESMA Logo" class="footer-img">
+                    <h2 class="footer-logo">SESMA RUGBY CLUB</h2>
+                </div>
+                <p>Rugby excellence since 2007. Discipline, Quality, Dedication.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Sponsorship</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h3>Follow the Club</h3>
+                <div class="social-icons">
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 SESMA Rugby Club. All Rights Reserved.</p>
+            <div class="dev-badge">
+                <span class="dev-label">Developed by</span>
+                <span class="dev-name">Juqiey S18</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const modal = document.getElementById("news-modal");
+        const closeBtn = document.querySelector(".close-modal");
+
+        // 2. Filter Logic
+        function initFilters() {
+            const btns = document.querySelectorAll('.filter-btn');
+            const items = document.querySelectorAll('.news-item');
+            btns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    btns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    const filter = btn.getAttribute('data-filter');
+                    items.forEach(item => {
+                        item.style.display = (filter === 'all' || item.getAttribute('data-category') === filter) ? 'block' : 'none';
+                    });
+                });
+            });
+        }
+
+        // 3. Modal Injection Logic
+        document.addEventListener('click', function(e) {
+            if (e.target && e.target.closest('.read-more')) {
+                const article = e.target.closest('.news-item');
+                
+                // Extract
+                const title = article.querySelector('h3').innerText;
+                const category = article.querySelector('.category-tag').innerText;
+                const img = article.querySelector('img').src;
+                const date = article.querySelector('.news-meta span:first-child').innerHTML;
+                const location = article.querySelector('.news-meta span:last-child').innerHTML;
+                const fullText = article.getAttribute('data-fulltext');
+
+                // Inject
+                document.getElementById('modal-title').innerText = title;
+                document.getElementById('modal-category').innerText = category;
+                document.getElementById('modal-img').src = img;
+                document.getElementById('modal-date').innerHTML = date;
+                document.getElementById('modal-location').innerHTML = location;
+                document.getElementById('modal-full-text').innerHTML = `<p>${fullText}</p>`;
+
+                modal.style.display = "block";
+                document.body.style.overflow = "hidden";
+            }
+        });
+
+        closeBtn.onclick = () => {
+            modal.style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+
+        window.onclick = (event) => {
+            if (event.target == modal) {
+                modal.style.display = "none";
+                document.body.style.overflow = "auto";
+            }
+        }
+
+        loadLayout();
+    </script>
+</body>
+</html>
