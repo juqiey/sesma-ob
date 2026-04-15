@@ -1,0 +1,190 @@
+/* --- VARIABLES --- */
+:root {
+    --primary-black: #0a0a0a;
+    --secondary-turquoise: #00ced1;
+    --accent-gold: #ffcc00;
+    --pure-white: #ffffff;
+    --soft-gray: #e0e0e0;
+    
+    --font-header: 'League Spartan', sans-serif;
+    --font-subheader: 'Libre Baskerville', serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--primary-black);
+    color: var(--pure-white);
+    font-family: var(--font-body);
+    line-height: 1.6;
+}
+
+/* --- SPONSOR CONTAINER BASE --- */
+.sponsor-container {
+    background-color: var(--primary-black);
+    color: var(--pure-white);
+    padding: 100px 5%;
+    min-height: 100vh;
+}
+
+.content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- HEADER STYLING --- */
+.sponsor-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.sub-label {
+    color: var(--secondary-turquoise);
+    font-family: var(--font-header);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 0.9rem;
+    font-weight: 900;
+}
+
+.main-title {
+    font-family: var(--font-header);
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    text-transform: uppercase;
+    margin: 15px 0;
+    line-height: 1;
+}
+
+.lead-text {
+    font-family: var(--font-body);
+    color: #888;
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+/* --- TIER SECTIONS --- */
+.tier-section {
+    margin-bottom: 100px;
+}
+
+.tier-title {
+    font-family: var(--font-header);
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.tier-title span {
+    color: var(--accent-gold);
+}
+
+.tier-title::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(255, 204, 0, 0.3), transparent);
+}
+
+/* --- LOGO GRID & HOVER EFFECTS --- */
+.logo-grid {
+    display: grid;
+    gap: 30px;
+}
+
+.tier-premier {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+.tier-official {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+
+.logo-box {
+    background: #0d0d0d;
+    border: 1px solid #1a1a1a;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.logo-box img {
+    max-width: 100%;
+    max-height: 140px;
+    object-fit: contain;
+    filter: grayscale(100%) brightness(0.7); /* The "Logo Style" base */
+    transition: all 0.4s ease;
+}
+
+/* Hover State */
+.logo-box:hover {
+    background: #111;
+    border-color: var(--secondary-turquoise);
+    box-shadow: 0 10px 30px rgba(0, 206, 209, 0.1);
+    transform: translateY(-5px);
+}
+
+.logo-box:hover img {
+    filter: grayscale(0%) brightness(1); /* Original color reveal */
+    transform: scale(1.05);
+}
+
+/* --- CTA SECTION --- */
+.sponsor-cta {
+    margin-top: 50px;
+}
+
+.cta-box {
+    background: linear-gradient(135deg, #0a0a0a 0%, #111 100%);
+    padding: 60px;
+    text-align: center;
+    border: 1px solid var(--accent-gold);
+    clip-path: polygon(5% 0, 100% 0, 95% 100%, 0 100%);
+}
+
+.cta-box h3 {
+    font-family: var(--font-header);
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+}
+
+.partner-btn {
+    display: inline-block;
+    margin-top: 25px;
+    background: var(--secondary-turquoise);
+    color: var(--primary-black);
+    padding: 15px 40px;
+    font-family: var(--font-header);
+    font-weight: 900;
+    text-decoration: none;
+    text-transform: uppercase;
+    clip-path: polygon(15% 0, 100% 0, 85% 100%, 0 100%);
+    transition: 0.3s;
+}
+
+.partner-btn:hover {
+    background: var(--pure-white);
+    transform: scale(1.05);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .tier-premier { grid-template-columns: 1fr; }
+    .tier-official { grid-template-columns: repeat(2, 1fr); }
+    .logo-box { height: 150px; padding: 25px; }
+    .cta-box { clip-path: none; padding: 40px 20px; }
+}
