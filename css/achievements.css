@@ -109,7 +109,7 @@ body {
     left: -20px;
     font-family: var(--font-header);
     font-size: 10rem;
-    color: rgba(255, 255, 255, 0.03);
+    color: rgba(80, 77, 77, 0.881);
     z-index: -1;
     font-weight: 900;
     pointer-events: none;
