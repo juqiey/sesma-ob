@@ -59,23 +59,24 @@ body {
 .stat-banner {
     display: flex;
     justify-content: center;
-    gap: 60px;
+    gap: 80px; /* Increased gap for better negative space */
     margin-top: 40px;
 }
 
-.stat-item .count {
+.stat-item h3 {
     font-family: var(--font-header);
-    font-size: 3.5rem;
+    font-size: 1.5rem; /* Reduced from the large count size */
     color: var(--accent-gold);
-    line-height: 1;
+    text-transform: uppercase;
+    margin-bottom: 10px;
 }
 
 .stat-item p {
-    font-family: var(--font-header);
+    font-family: var(--font-body);
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: #555;
-    font-size: 0.8rem;
+    color: #888; /* Slightly lighter for readability */
+    font-size: 0.7rem;
 }
 
 /* Milestone Blocks */
@@ -109,7 +110,7 @@ body {
     left: -20px;
     font-family: var(--font-header);
     font-size: 10rem;
-    color: rgba(80, 77, 77, 0.881);
+    color: rgba(225, 225, 225, 0.08);
     z-index: -1;
     font-weight: 900;
     pointer-events: none;
@@ -176,16 +177,40 @@ body {
     border-color: var(--secondary-turquoise);
 }
 
-/* Mobile Responsive */
 @media (max-width: 992px) {
-    .milestone-block, .milestone-block.alt {
+    /* Milestones layout adjustment */
+    .milestone-block, 
+    .milestone-block.alt {
         grid-template-columns: 1fr;
         gap: 40px;
         text-align: center;
     }
+
     .milestone-info { order: 1 !important; }
     .milestone-gallery { order: 2; grid-template-rows: repeat(2, 200px); }
-    .m-year-bg { left: 50%; transform: translateX(-50%); top: -40px; }
+    
+    .m-year-bg { 
+        left: 50%; 
+        transform: translateX(-50%); 
+        top: -40px; 
+    }
+    
     .m-desc { margin: 0 auto; }
-    .stat-banner { gap: 30px; }
+}
+
+@media (max-width: 768px) {
+    /* Banner Stack for Mobile */
+    .stat-banner {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    /* Adjust font size for better mobile readability */
+    .main-title {
+        font-size: clamp(2.5rem, 8vw, 3.5rem);
+    }
+    
+    .stat-item h3 {
+        font-size: 1.4rem;
+    }
 }
